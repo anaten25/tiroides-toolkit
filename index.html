@@ -555,7 +555,7 @@ function clasificarTIRADS() {
 
   let tr, label, riesgo, clase;
   if (puntos === 0) { tr = 'TR1'; label = 'Benigno'; riesgo = '<2%'; clase = 'result-tirads-1'; }
-  else if (puntos === 2) { tr = 'TR2'; label = 'No sospechoso'; riesgo = '<2%'; clase = 'result-tirads-2'; }
+  else if (puntos <= 2) { tr = 'TR2'; label = 'No sospechoso'; riesgo = '<2%'; clase = 'result-tirads-2'; }
   else if (puntos === 3) { tr = 'TR3'; label = 'Ligeramente sospechoso'; riesgo = '<5%'; clase = 'result-tirads-3'; }
   else if (puntos <= 6) { tr = 'TR4'; label = 'Moderadamente sospechoso'; riesgo = '5-20%'; clase = 'result-tirads-4'; }
   else { tr = 'TR5'; label = 'Altamente sospechoso'; riesgo = '≥20%'; clase = 'result-tirads-5'; }
@@ -659,7 +659,7 @@ function generarPlan() {
   const puntos = composicion + ecogenicidad + forma + bordes + focos;
   let tr, label;
   if (puntos === 0) { tr = 'TR1'; label = 'Benigno'; }
-  else if (puntos === 2) { tr = 'TR2'; label = 'No sospechoso'; }
+  else if (puntos <= 2) { tr = 'TR2'; label = 'No sospechoso'; }
   else if (puntos === 3) { tr = 'TR3'; label = 'Ligeramente sospechoso'; }
   else if (puntos <= 6) { tr = 'TR4'; label = 'Moderadamente sospechoso'; }
   else { tr = 'TR5'; label = 'Altamente sospechoso'; }
